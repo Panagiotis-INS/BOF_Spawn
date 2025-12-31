@@ -32,10 +32,10 @@ beacon_command_register(
 # ================================================================
 # DEFAULT CONFIGURATION
 # ================================================================
-$process_spawn = "\\??\\C:\\Windows\\System32\\rundll32.exe";
+$process_spawn = "\\??\\C:\\Windows\\explorer.exe";
 $parent_process = "explorer.exe";
 $working_dir = "C:\\Windows\\System32";
-$cmd_line = "C:\\Windows\\System32\\rundll32.exe";
+$cmd_line = "C:\\Windows\\explorer.exe";
 $block_dll = "true";
 $cfg_disable = "true";
 $use_rwx = "false";  # Changed default to false for better OpSec
@@ -94,7 +94,7 @@ sub ProcessConfig {
 
     dialog_description($dialog, 
         "Configure process spawning and injection parameters:\n\n" .
-        "Process Name:        Executable path to spawn (e.g., rundll32.exe)\n" .
+        "Process Name:        Executable path to spawn (e.g., explorer.exe)\n" .
         "Working Directory:   Current directory for spawned process\n" .
         "PPID Process:        Parent process name for PPID spoofing (empty = disabled)\n" .
         "CMD Line:            Command line arguments for spawned process\n" .

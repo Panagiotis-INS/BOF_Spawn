@@ -2,6 +2,10 @@
 
 ## Update
 
+### 31/12/25
+
+Changed process spawn from rundll32 to explorer exe for better opsec, still needs improvement from my side to spoof a more legitimate ppid.
+
 ### 11/23/25
 
 - Update `Makefile` and add `.gitkeep` in `Bin/` and `Bin/temp`, thanks @0xTriboulet for issues
@@ -63,7 +67,7 @@ The BOF provides extensive customization through the CNA script configuration di
 
 | Option | Description | Format/Notes |
 |--------|-------------|--------------|
-| **Process Name** | Executable path to spawn | NT path format: `\??\C:\Windows\System32\rundll32.exe` |
+| **Process Name** | Executable path to spawn | NT path format: `\??\C:\Windows\explorer.exe` |
 | **Working Directory** | Current directory for spawned process | Standard path: `C:\Windows\System32` |
 | **PPID Spoof Process** | Parent process name for PPID spoofing | Process name only (e.g., `explorer.exe`) |
 | **Command Line** | Arguments for spawned process | Full command line string |

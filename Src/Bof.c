@@ -179,7 +179,7 @@ BOOL FindGadget(
  * 7. Changes memory protection if needed (RW -> RX)
  * 8. Resumes process to execute shellcode
  * 
- * @param[in] lpwProcessName Path to the process to spawn (e.g., "C:\\Windows\\System32\\rundll32.exe")
+ * @param[in] lpwProcessName Path to the process to spawn (e.g., "C:\\Windows\\explorer.exe")
  * @param[in] lpwParentProcessName Name of parent process for PPID spoofing (NULL to disable)
  * @param[in] lpwWorkingDir Working directory for the spawned process
  * @param[in] lpwCmdLine Command line arguments for the spawned process
@@ -543,7 +543,7 @@ void go(
     UseRWX          = BeaconDataInt(&parser);
     MemExec         = BeaconDataInt(&parser);
 
-/*
+
     BeaconPrintf(CALLBACK_OUTPUT, "[+] Mitigation Policies:");
     BeaconPrintf(CALLBACK_OUTPUT, "    Block DLL policy:    %s", BlockDllPolicy ? "Enabled" : "Disabled");
     BeaconPrintf(CALLBACK_OUTPUT, "    Disable CFG:         %s", DisableCfg ? "Yes" : "No");
@@ -551,7 +551,7 @@ void go(
 
     const char* execMethod[] = {"Direct RIP", "JMP RAX", "JMP RBX", "Callback Function"};
     BeaconPrintf(CALLBACK_OUTPUT, "    Execution method:    %s\n", execMethod[MemExec]);
-*/
+
     Shellcode = BeaconDataExtract(&parser, &ShellcodeSize);
     //BeaconPrintf(CALLBACK_OUTPUT, "[*] Shellcode size: %d bytes\n", ShellcodeSize);
 
